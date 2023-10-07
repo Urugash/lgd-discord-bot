@@ -12,7 +12,7 @@ var fs = require('fs');
 module.exports = class SendMessageCommand extends Command {
 	constructor(client) {
 		super(client, {
-			name: 'program-message',
+			name: "Programmer l'envoi",
 			description: "Programme un message pour l'envoyer",
             type: "CONTEXT_MENU_MESSAGE",
 			category: 'Misc',
