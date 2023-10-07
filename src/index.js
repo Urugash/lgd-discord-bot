@@ -4,14 +4,13 @@ const express = require('express');
 const dotenv = require('dotenv');
 
 dotenv.config();
-console.log(process.env.DISCORD_TOKEN)
 
 const client = new ShewenyClient({
   intents: ["Guilds", "GuildMessages"],
   managers: {
     commands: {
       directory: "./commands",
-      guildId: ['1137711801761550347'],
+      guildId: [process.env.GUILD_ID],
       prefix: "!",
       autoRegisterApplicationCommands: true,
     },
@@ -50,4 +49,4 @@ app.get('/plannedMessages', (req,res) => {
   const plannedMessages = require('../plannedMessages.json');
   res.status(200).json(plannedMessages);
 });
-app.listen(8080, () => {console.log("Serveur à l'écoute")});
+app.listen(3000, () => {console.log("Serveur à l'écoute")});
