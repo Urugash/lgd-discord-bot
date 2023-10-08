@@ -1,6 +1,7 @@
 const { ShewenyClient } = require("sheweny");
-// const express = require('express');
+const express = require('express');
 const dotenv = require('dotenv');
+var bodyParser = require('body-parser')
 
 dotenv.config();
 
@@ -33,9 +34,16 @@ const client = new ShewenyClient({
 
 client.login(process.env.DISCORD_TOKEN);
 
-// const app = express();
+const app = express();
+var jsonParser = bodyParser.json()
+
 // app.get('/plannedMessages', (req,res) => {
 //   const plannedMessages = require('../plannedMessages.json');
 //   res.status(200).json(plannedMessages);
 // });
-// app.listen(3000, () => {console.log("Serveur à l'écoute")});
+app.post('/helloAsso/newOrder', jsonParser, (req,res) => {
+  const body = req.body;
+  //TODO : décortiquer pour récupérer nom discord dans formulaire
+  res.send('POST request from webhook');
+});
+app.listen(3000, () => {console.log("Serveur à l'écoute")});
