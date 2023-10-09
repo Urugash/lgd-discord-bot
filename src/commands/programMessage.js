@@ -16,6 +16,7 @@ module.exports = class SendMessageCommand extends Command {
 			description: "Programme un message pour l'envoyer",
             type: "CONTEXT_MENU_MESSAGE",
 			category: 'Misc',
+			adminsOnly: true
 		});
 	}
 	async execute(interaction) {
