@@ -1,0 +1,1 @@
+import{_ as e,o as a,c as s}from"./chunks/framework.ec8f7e8e.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/programMessage.md","filePath":"docs/programMessage.md"}'),r={name:"docs/programMessage.md"};function t(o,c,n,p,d,m){return a(),s("div")}const g=e(r,[["render",t]]);export{i as __pageData,g as default};

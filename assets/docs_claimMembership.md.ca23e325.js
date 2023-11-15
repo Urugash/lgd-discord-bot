@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.ec8f7e8e.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/claimMembership.md","filePath":"docs/claimMembership.md"}'),s={name:"docs/claimMembership.md"};function c(r,o,i,m,n,p){return t(),a("div")}const _=e(s,[["render",c]]);export{l as __pageData,_ as default};
