@@ -1,0 +1,17 @@
+{
+  "name": "lgd-discord-website",
+  "version": "0.0.1",
+  "description": "Discord Bot Documentation",
+  "main": "none",
+  "scripts": {
+    "dev": "vitepress dev . --host",
+    "build": "vitepress build .",
+    "serve": "vitepress serve .",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.25"
+  }
+}
