@@ -1,0 +1,35 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+      - name: Install
+        working-directory: website
+        run: npm ci
+
+      - name: Build
+        working-directory: website
+        # env:
+        #   ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+        #   ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+        run: npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: website/.vitepress/dist
+          cname: lgd-discord.dev
