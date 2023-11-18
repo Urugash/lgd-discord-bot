@@ -12,7 +12,7 @@ export default defineConfig({
       md.use(replace);
     },
   },
-  base: '/',
+  base: '/lgd-discord-bot/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
