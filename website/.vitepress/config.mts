@@ -1,10 +1,18 @@
 import './style/vars.css';
 import { defineConfig } from 'vitepress'
+import replace from './replace';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "LGD Bot",
   description: "Documentation du bot Discord de Lyon Game Dev",
+  lastUpdated: true,
+  markdown: {
+    config(md) {
+      md.use(replace);
+    },
+  },
+  base: '/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -22,12 +30,12 @@ export default defineConfig({
      '/guide/': [
       {
         text: 'Introduction',
-        items: [{text: 'Introduction', link: '/guide/index.md'}]
+        items: [{text: 'Introduction', link: '/guide/index'}]
       },
       {
         text: 'Global',
         items: [
-          {text: 'Réclamer Rôle Adhérent', link: '/guide/global/claimMembership.md'}
+          {text: 'Réclamer Rôle Adhérent', link: '/guide/global/claimMembership'}
         ],
       },
       // {
@@ -41,7 +49,7 @@ export default defineConfig({
       {
         text: 'Pole communication',
         items: [
-          {text: 'Programmer un message', link: '/guide/communication/programMessage.md'}
+          {text: 'Programmer un message', link: '/guide/communication/programMessage'}
         ],
       },
       // {
@@ -53,8 +61,8 @@ export default defineConfig({
         {
           text: 'Commandes',
           items: [
-            {text: 'Réclamer Rôle Adhérent', link: '/docs/claimMembership.md'},
-            {text: 'Programmer un message', link: '/docs/programMessage.md'},
+            {text: 'Réclamer Rôle Adhérent', link: '/docs/claimMembership'},
+            {text: 'Programmer un message', link: '/docs/programMessage'},
           ]
         },
      ]
