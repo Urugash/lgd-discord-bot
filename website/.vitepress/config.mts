@@ -29,10 +29,6 @@ export default defineConfig({
     sidebar: {
      '/guide/': [
       {
-        text: 'Introduction',
-        items: [{text: 'Introduction', link: '/guide/index'}]
-      },
-      {
         text: 'Global',
         items: [
           {text: 'Réclamer Rôle Adhérent', link: '/guide/global/claimMembership'}
